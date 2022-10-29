@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Experimental.Networking;
 using UnityEngine.Networking;
 
 namespace UnityModManagerNet
@@ -92,7 +93,7 @@ namespace UnityModManagerNet
             {
                 using (var ping = new System.Net.NetworkInformation.Ping())
                 {
-                    return ping.Send("www.google.com.mx", 3000).Status == IPStatus.Success;
+                    return ping.Send("https://1.1.1.1", 3000).Status == IPStatus.Success;
                 }
             }
             catch (Exception e)

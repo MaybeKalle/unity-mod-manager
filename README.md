@@ -1,11 +1,12 @@
-# unity-mod-manager
-This mod adds modding support for games created on Unity engine.
+# Unity Mod Manager
+This client is forked from the [**unity-mod-manager by newman55**](https://github.com/newman55/unity-mod-manager) and was specifically redesigned to work for some games.
 
-[**Home page**](https://www.nexusmods.com/site/mods/21)
 
-[**Dropbox**](https://www.dropbox.com/s/wz8x8e4onjdfdbm/UnityModManager.zip?dl=1)
+### Credit:
+ - The original code was created by [newman55](https://github.com/newman55) and other contributors who commited changes to the [GitHub repository](https://github.com/newman55/unity-mod-manager)
+ - You can also find the normal [Unity Mod Manager on NexusMods](https://www.nexusmods.com/site/mods/21)
 
-### Libraries used in the project.
+### Libraries used in the project:
 - [Harmony](https://github.com/pardeike/Harmony/wiki/Utilities)
 - [HarmonyProxy](https://github.com/spacehamster/HarmonyProxy)
 - [UnityDoorstop](https://github.com/NeighTools/UnityDoorstop)

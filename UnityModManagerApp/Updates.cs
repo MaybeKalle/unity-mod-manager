@@ -167,7 +167,7 @@ namespace UnityModManagerNet.Installer
             {
                 using (var ping = new Ping())
                 {
-                    return ping.Send("https://1.1.1.1", 3000).Status == IPStatus.Success;
+                    return ping.Send("1.1.1.1", 3000).Status == IPStatus.Success;
                 }
             }
             catch (Exception e)

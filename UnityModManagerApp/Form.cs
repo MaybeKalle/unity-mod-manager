@@ -36,7 +36,7 @@ namespace UnityModManagerNet.Installer
         {
             try
             {
-                if (CheckApplicationAlreadyRunning(out var process) && MessageBox.Show("Already running", "Notice", MessageBoxButtons.OK) == DialogResult.OK)
+                if (CheckApplicationAlreadyRunning(out var process) && MessageBox.Show("There is already an instance of the mod manager running. Please close all other instances before starting a new one.", "Notice", MessageBoxButtons.OK) == DialogResult.OK)
                 {
                     if (!Utils.IsUnixPlatform())
                         SetForegroundWindow(process.MainWindowHandle);
@@ -123,7 +123,6 @@ namespace UnityModManagerNet.Installer
             btnRestore.Click += btnRestore_Click;
             gameList.SelectedIndexChanged += gameList_Changed;
             btnOpenFolder.Click += btnOpenFolder_Click;
-            btnDownloadUpdate.Click += btnDownloadUpdate_Click;
 
             Log.Init<Log>();
             
@@ -704,26 +703,6 @@ namespace UnityModManagerNet.Installer
             RefreshForm();
         }
 
-        private void btnDownloadUpdate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (btnDownloadUpdate.Text == "Home Page")
-                {
-                    if (!string.IsNullOrEmpty(config.HomePage))
-                        Process.Start(config.HomePage);
-                }
-                else
-                {
-                    Process.Start("Downloader.exe");
-                }
-            }
-            catch(Exception ex)
-            {
-                Log.Print(ex.ToString());
-            }
-        }
-
         private bool showChoosePathNotice = true;
 
         private void btnOpenFolder_Click(object sender, EventArgs e)
@@ -745,8 +724,6 @@ namespace UnityModManagerNet.Installer
         {
             notesTextBox.Text = "";
             additionallyGroupBox.Visible = false;
-            extraFilesTextBox.Text = "";
-            extraFilesGroupBox.Visible = false;
 
             var selected = (GameInfo)((ComboBox)sender).SelectedItem;
             if (selected != null)
@@ -761,12 +738,6 @@ namespace UnityModManagerNet.Installer
                 {
                     notesTextBox.Text = selected.Comment;
                     additionallyGroupBox.Visible = true;
-                }
-                
-                if (!string.IsNullOrEmpty(selected.ExtraFilesUrl))
-                {
-                    extraFilesTextBox.Text = $"Click on the Manual and unzip archive to game folder. Or click on the Auto for automatic installation. This must be done before installing mod loader to game.";
-                    extraFilesGroupBox.Visible = true;
                 }
             }
 

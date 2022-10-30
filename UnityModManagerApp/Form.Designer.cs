@@ -36,15 +36,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.additionallyGroupBox = new System.Windows.Forms.GroupBox();
             this.notesTextBox = new System.Windows.Forms.RichTextBox();
-            this.extraFilesGroupBox = new System.Windows.Forms.GroupBox();
-            this.extraFilesManualButton = new System.Windows.Forms.Button();
-            this.extraFilesAutoButton = new System.Windows.Forms.Button();
-            this.extraFilesTextBox = new System.Windows.Forms.RichTextBox();
             this.labelFolder = new System.Windows.Forms.Label();
             this.labelGame = new System.Windows.Forms.Label();
             this.installTypeGroup = new System.Windows.Forms.GroupBox();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.btnDownloadUpdate = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.gameList = new System.Windows.Forms.ComboBox();
@@ -56,16 +51,15 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainerMods = new System.Windows.Forms.SplitContainer();
             this.listMods = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.ModcontextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.installToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uninstallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wwwToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainerModsInstall = new System.Windows.Forms.SplitContainer();
             this.btnModInstall = new System.Windows.Forms.Button();
@@ -84,7 +78,6 @@
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.additionallyGroupBox.SuspendLayout();
-            this.extraFilesGroupBox.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMods)).BeginInit();
             this.splitContainerMods.Panel1.SuspendLayout();
@@ -155,7 +148,6 @@
             this.tabPage1.Controls.Add(this.labelGame);
             this.tabPage1.Controls.Add(this.installTypeGroup);
             this.tabPage1.Controls.Add(this.btnRestore);
-            this.tabPage1.Controls.Add(this.btnDownloadUpdate);
             this.tabPage1.Controls.Add(this.btnRemove);
             this.tabPage1.Controls.Add(this.btnOpenFolder);
             this.tabPage1.Controls.Add(this.gameList);
@@ -175,7 +167,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.additionallyGroupBox);
-            this.panel1.Controls.Add(this.extraFilesGroupBox);
             this.panel1.Location = new System.Drawing.Point(4, 259);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(343, 151);
@@ -185,7 +176,7 @@
             // 
             this.additionallyGroupBox.Controls.Add(this.notesTextBox);
             this.additionallyGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.additionallyGroupBox.Location = new System.Drawing.Point(0, 74);
+            this.additionallyGroupBox.Location = new System.Drawing.Point(0, 0);
             this.additionallyGroupBox.Name = "additionallyGroupBox";
             this.additionallyGroupBox.Padding = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.additionallyGroupBox.Size = new System.Drawing.Size(343, 74);
@@ -214,62 +205,6 @@
             this.notesTextBox.TabStop = false;
             this.notesTextBox.Text = "";
             this.notesTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.notesTextBox_LinkClicked);
-            // 
-            // extraFilesGroupBox
-            // 
-            this.extraFilesGroupBox.Controls.Add(this.extraFilesManualButton);
-            this.extraFilesGroupBox.Controls.Add(this.extraFilesAutoButton);
-            this.extraFilesGroupBox.Controls.Add(this.extraFilesTextBox);
-            this.extraFilesGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extraFilesGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.extraFilesGroupBox.Name = "extraFilesGroupBox";
-            this.extraFilesGroupBox.Padding = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.extraFilesGroupBox.Size = new System.Drawing.Size(343, 74);
-            this.extraFilesGroupBox.TabIndex = 21;
-            this.extraFilesGroupBox.TabStop = false;
-            this.extraFilesGroupBox.Text = "Extra Files";
-            // 
-            // extraFilesManualButton
-            // 
-            this.extraFilesManualButton.BackColor = System.Drawing.Color.Transparent;
-            this.extraFilesManualButton.Location = new System.Drawing.Point(215, 45);
-            this.extraFilesManualButton.Name = "extraFilesManualButton";
-            this.extraFilesManualButton.Size = new System.Drawing.Size(60, 23);
-            this.extraFilesManualButton.TabIndex = 21;
-            this.extraFilesManualButton.Text = "Manual";
-            this.extraFilesManualButton.UseVisualStyleBackColor = false;
-            this.extraFilesManualButton.Click += new System.EventHandler(this.extraFilesManualButton_Click);
-            // 
-            // extraFilesAutoButton
-            // 
-            this.extraFilesAutoButton.BackColor = System.Drawing.Color.PaleGreen;
-            this.extraFilesAutoButton.Location = new System.Drawing.Point(277, 45);
-            this.extraFilesAutoButton.Name = "extraFilesAutoButton";
-            this.extraFilesAutoButton.Size = new System.Drawing.Size(60, 23);
-            this.extraFilesAutoButton.TabIndex = 20;
-            this.extraFilesAutoButton.Text = "Auto";
-            this.extraFilesAutoButton.UseVisualStyleBackColor = false;
-            this.extraFilesAutoButton.Click += new System.EventHandler(this.extraFilesAutoButton_Click);
-            // 
-            // extraFilesTextBox
-            // 
-            this.extraFilesTextBox.AcceptsTab = true;
-            this.extraFilesTextBox.AutoWordSelection = true;
-            this.extraFilesTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.extraFilesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.extraFilesTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.extraFilesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.extraFilesTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.extraFilesTextBox.Location = new System.Drawing.Point(6, 16);
-            this.extraFilesTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.extraFilesTextBox.Name = "extraFilesTextBox";
-            this.extraFilesTextBox.ReadOnly = true;
-            this.extraFilesTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.extraFilesTextBox.ShortcutsEnabled = false;
-            this.extraFilesTextBox.Size = new System.Drawing.Size(331, 55);
-            this.extraFilesTextBox.TabIndex = 19;
-            this.extraFilesTextBox.TabStop = false;
-            this.extraFilesTextBox.Text = "";
             // 
             // labelFolder
             // 
@@ -313,20 +248,6 @@
             this.btnRestore.UseMnemonic = false;
             this.btnRestore.UseVisualStyleBackColor = true;
             // 
-            // btnDownloadUpdate
-            // 
-            this.btnDownloadUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDownloadUpdate.AutoSize = true;
-            this.btnDownloadUpdate.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnDownloadUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDownloadUpdate.Location = new System.Drawing.Point(222, 178);
-            this.btnDownloadUpdate.Name = "btnDownloadUpdate";
-            this.btnDownloadUpdate.Size = new System.Drawing.Size(122, 26);
-            this.btnDownloadUpdate.TabIndex = 12;
-            this.btnDownloadUpdate.Text = "Home Page";
-            this.btnDownloadUpdate.UseMnemonic = false;
-            this.btnDownloadUpdate.UseVisualStyleBackColor = false;
-            // 
             // btnRemove
             // 
             this.btnRemove.AutoSize = true;
@@ -336,14 +257,13 @@
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(344, 45);
             this.btnRemove.TabIndex = 2;
-            this.btnRemove.Text = "Uninstall";
+            this.btnRemove.Text = "Uninstall Mod Manager";
             this.btnRemove.UseMnemonic = false;
             this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // btnOpenFolder
             // 
-            this.btnOpenFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOpenFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnOpenFolder.Location = new System.Drawing.Point(40, 178);
             this.btnOpenFolder.Name = "btnOpenFolder";
@@ -355,8 +275,7 @@
             // 
             // gameList
             // 
-            this.gameList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.gameList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gameList.FormattingEnabled = true;
             this.gameList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -376,7 +295,7 @@
             this.btnInstall.Name = "btnInstall";
             this.btnInstall.Size = new System.Drawing.Size(344, 45);
             this.btnInstall.TabIndex = 1;
-            this.btnInstall.Text = "Install";
+            this.btnInstall.Text = "Install Mod Manager";
             this.btnInstall.UseMnemonic = false;
             this.btnInstall.UseVisualStyleBackColor = true;
             // 
@@ -456,11 +375,7 @@
             // 
             // listMods
             // 
-            this.listMods.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+            this.listMods.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.columnHeader1, this.columnHeader2, this.columnHeader3, this.columnHeader4 });
             this.listMods.ContextMenuStrip = this.ModcontextMenuStrip1;
             this.listMods.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listMods.FullRowSelect = true;
@@ -497,15 +412,9 @@
             // ModcontextMenuStrip1
             // 
             this.ModcontextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.ModcontextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.installToolStripMenuItem,
-            this.updateToolStripMenuItem,
-            this.revertToolStripMenuItem,
-            this.uninstallToolStripMenuItem,
-            this.wwwToolStripMenuItem1,
-            this.openFolderToolStripMenuItem});
+            this.ModcontextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.installToolStripMenuItem, this.updateToolStripMenuItem, this.revertToolStripMenuItem, this.uninstallToolStripMenuItem, this.openFolderToolStripMenuItem });
             this.ModcontextMenuStrip1.Name = "ModcontextMenuStrip1";
-            this.ModcontextMenuStrip1.Size = new System.Drawing.Size(140, 136);
+            this.ModcontextMenuStrip1.Size = new System.Drawing.Size(140, 114);
             this.ModcontextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.ModcontextMenuStrip1_Opening);
             // 
             // installToolStripMenuItem
@@ -535,13 +444,6 @@
             this.uninstallToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.uninstallToolStripMenuItem.Text = "Uninstall";
             this.uninstallToolStripMenuItem.Click += new System.EventHandler(this.uninstallToolStripMenuItem_Click);
-            // 
-            // wwwToolStripMenuItem1
-            // 
-            this.wwwToolStripMenuItem1.Name = "wwwToolStripMenuItem1";
-            this.wwwToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
-            this.wwwToolStripMenuItem1.Text = "Home Page";
-            this.wwwToolStripMenuItem1.Click += new System.EventHandler(this.wwwToolStripMenuItem1_Click);
             // 
             // openFolderToolStripMenuItem
             // 
@@ -608,8 +510,7 @@
             this.statusStrip1.AutoSize = false;
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabel});
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.statusLabel });
             this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
@@ -652,7 +553,7 @@
             this.MinimumSize = new System.Drawing.Size(374, 508);
             this.Name = "UnityModManagerForm";
             this.ShowIcon = false;
-            this.Text = "UnityModManager Installer";
+            this.Text = "Unity Mod Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UnityModLoaderForm_FormClosing);
             this.panelMain.ResumeLayout(false);
             this.splitContainerMain.Panel1.ResumeLayout(false);
@@ -664,7 +565,6 @@
             this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.additionallyGroupBox.ResumeLayout(false);
-            this.extraFilesGroupBox.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.splitContainerMods.Panel1.ResumeLayout(false);
             this.splitContainerMods.Panel2.ResumeLayout(false);
@@ -679,7 +579,6 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -712,11 +611,9 @@
         private System.Windows.Forms.ToolStripMenuItem installToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uninstallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem revertToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem wwwToolStripMenuItem1;
         private System.Windows.Forms.SplitContainer splitContainerModsInstall;
         private System.Windows.Forms.Button btnModInstall;
         private System.Windows.Forms.OpenFileDialog modInstallFileDialog;
-        private System.Windows.Forms.Button btnDownloadUpdate;
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.GroupBox installTypeGroup;
         private System.Windows.Forms.RichTextBox notesTextBox;
@@ -724,10 +621,6 @@
         private System.Windows.Forms.Label labelGame;
         private System.Windows.Forms.Label labelFolder;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox extraFilesGroupBox;
-        private System.Windows.Forms.RichTextBox extraFilesTextBox;
-        private System.Windows.Forms.Button extraFilesAutoButton;
-        private System.Windows.Forms.Button extraFilesManualButton;
         private System.Windows.Forms.ToolStripMenuItem openFolderToolStripMenuItem;
     }
 }

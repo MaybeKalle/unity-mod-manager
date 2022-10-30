@@ -451,7 +451,6 @@ namespace UnityModManagerNet.Installer
             uninstallToolStripMenuItem.Visible = false;
             updateToolStripMenuItem.Visible = false;
             revertToolStripMenuItem.Visible = false;
-            wwwToolStripMenuItem1.Visible = false;
             openFolderToolStripMenuItem.Visible = false;
 
             var modInfo = selectedMod;
@@ -498,11 +497,6 @@ namespace UnityModManagerNet.Installer
             else if (modInfo.Status == ModStatus.NotInstalled)
             {
                 installToolStripMenuItem.Visible = true;
-            }
-
-            if (!string.IsNullOrEmpty(modInfo.HomePage))
-            {
-                wwwToolStripMenuItem1.Visible = true;
             }
         }
 

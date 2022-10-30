@@ -144,7 +144,6 @@ namespace UnityModManagerNet.Installer
                         if (version < ver)
                         {
                             //btnDownloadUpdate.Visible = true;
-                            btnDownloadUpdate.Text = $"Download {release.Version}";
                             Log.Print($"Update is available.");
                         }
                         else

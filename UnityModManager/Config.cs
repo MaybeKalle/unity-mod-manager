@@ -23,7 +23,7 @@ namespace UnityModManagerNet
             public static KeyBinding EscapeHotkey = new KeyBinding { keyCode = KeyCode.Escape };
             public KeyBinding Hotkey = new KeyBinding();
             public int CheckUpdates = 1;
-            public int ShowOnStart = 1;
+            public int ShowOnStart = 0;
             public float WindowWidth;
             public float WindowHeight;
             public float UIScale = 1f;

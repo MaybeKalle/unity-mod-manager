@@ -454,6 +454,43 @@ namespace UnityModManagerNet
                     onChange(value);
                 }
             }
+            
+            /// <summary>
+            /// [0.30.0]
+            /// </summary>
+            /// <returns>
+            /// Returns true if the value has changed.
+            /// </returns>
+            public static bool DrawStringField(ref string value, string label, GUIStyle style = null, params GUILayoutOption[] option)
+            {
+                var old = value;
+                GUILayout.Label(label, GUILayout.ExpandWidth(false));
+                var str = GUILayout.TextField(value, style ?? GUI.skin.textField, option);
+                if (string.IsNullOrEmpty(str))
+                {
+                    value = "";
+                }
+                else
+                {
+                    value = str;
+                }
+                return value != old;
+            }
+            
+            /// <summary>
+            /// [0.30.0]
+            /// </summary>
+            public static void DrawStringField(string value, string label, Action<string> onChange, GUIStyle style = null, params GUILayoutOption[] option)
+            {
+                if (onChange == null)
+                {
+                    throw new ArgumentNullException("onChange");
+                }
+                if (DrawStringField(ref value, label, style, option))
+                {
+                    onChange(value);
+                }
+            }
 
             private static List<int> collapsibleStates = new List<int>();
 

@@ -4,7 +4,7 @@ This client is forked from the [**unity-mod-manager by newman55**](https://githu
 
 ### Credit:
  - The original code was created by [newman55](https://github.com/newman55) and other contributors who commited changes to the [GitHub repository](https://github.com/newman55/unity-mod-manager)
- - The repository was cloned with [c72b550](https://github.com/newman55/unity-mod-manager/commit/c72b5502d6babd45adc7494923612eb4e007dbf0) being the latest commit
+ - The repository was forked with [c72b550](https://github.com/newman55/unity-mod-manager/commit/c72b5502d6babd45adc7494923612eb4e007dbf0) being the latest commit
  - I plan on keeping this version up-to-date with important changes made to the original repository
  - You can also find the normal [Unity Mod Manager on NexusMods](https://www.nexusmods.com/site/mods/21)
 

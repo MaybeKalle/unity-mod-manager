@@ -10,7 +10,7 @@ namespace UnityModManagerNet
     /// <summary>
     /// [0.18.0]
     /// </summary>
-    public enum DrawType { Auto, Ignore, Field, Slider, Toggle, ToggleGroup, /*MultiToggle, */PopupList, KeyBinding };
+    public enum DrawType { Auto, Ignore, Field, Slider, Toggle, ToggleGroup, /*MultiToggle, */PopupList, KeyBinding, StringField };
 
     /// <summary>
     /// [0.18.0]
@@ -117,7 +117,7 @@ namespace UnityModManagerNet
         public partial class UI : MonoBehaviour
         {
             static Type[] fieldTypes = new[] { typeof(int), typeof(long), typeof(float), typeof(double), typeof(int[]), typeof(long[]), typeof(float[]), typeof(double[]),
-                typeof(Vector2), typeof(Vector3), typeof(Vector4), typeof(Color), typeof(string)};
+                typeof(Vector2), typeof(Vector3), typeof(Vector4), typeof(Color)};
             static Type[] sliderTypes = new[] { typeof(int), typeof(long), typeof(float), typeof(double) };
             static Type[] toggleTypes = new[] { typeof(bool) };
             static Type[] specialTypes = new[] { typeof(Vector2), typeof(Vector3), typeof(Vector4), typeof(Color), typeof(KeyBinding) };
@@ -723,7 +723,7 @@ namespace UnityModManagerNet
                             continue;
                         }
                     }
-                    
+
                     foreach (SpaceAttribute a_ in f.GetCustomAttributes(typeof(SpaceAttribute), false))
                     {
                         GUILayout.Space(Scale((int)a_.height));
@@ -957,7 +957,7 @@ namespace UnityModManagerNet
                         }
                         else
                         {
-                            //var val = f.GetValue(container).ToString();
+                            var val = f.GetValue(container).ToString();
                             var obj = f.GetValue(container);
                             Type elementType = null;
                             object[] values = null;
@@ -1023,7 +1023,7 @@ namespace UnityModManagerNet
                                 var isFloat = f.FieldType == typeof(float) || f.FieldType == typeof(double) || f.FieldType == typeof(float[]) || f.FieldType == typeof(double[]);
                                 for (int i = 0; i < values.Length; i++)
                                 {
-                                    var val = values[i].ToString();
+                                    //var val = values[i].ToString();
                                     if (a.Precision >= 0 && isFloat)
                                     {
                                         if (Double.TryParse(val, System.Globalization.NumberStyles.Float, System.Globalization.NumberFormatInfo.CurrentInfo, out var num))
@@ -1036,7 +1036,7 @@ namespace UnityModManagerNet
                                         GUILayout.BeginHorizontal();
                                         GUILayout.Label($"  [{i}] ", GUILayout.ExpandWidth(false));
                                     }
-                                    var result = f.FieldType == typeof(string) ? GUILayout.TextField(val, a.MaxLength, options.ToArray()) : GUILayout.TextField(val, options.ToArray());
+                                    var result = (f.FieldType == typeof(string) || f.FieldType == typeof(System.String)) ? GUILayout.TextField(val, a.MaxLength, options.ToArray()) : GUILayout.TextField(val, options.ToArray());
                                     if (f.FieldType.IsArray)
                                     {
                                         GUILayout.EndHorizontal();
@@ -1089,6 +1089,41 @@ namespace UnityModManagerNet
                                 GUILayout.EndVertical();
                             else
                                 GUILayout.EndHorizontal();
+                        }
+                    }
+                    else if (a.Type == DrawType.StringField)
+                    {
+                        if (!Array.Exists(new []{typeof(string), typeof(String), typeof(System.String)}, x => x == f.FieldType))
+                        {
+                            throw new Exception($"Type {f.FieldType} can't be drawn as {DrawType.StringField}");
+                        }
+                        
+                        if (a.Vertical)
+                            GUILayout.BeginVertical();
+                        else
+                            GUILayout.BeginHorizontal();
+                        
+                        BeginHorizontalTooltip(a);
+                        GUILayout.Label(fieldName, GUILayout.ExpandWidth(false));
+                        EndHorizontalTooltip(a);
+
+                        if (!a.Vertical)
+                            GUILayout.Space(Scale(5));
+                        var key = f.GetValue(container).ToString();
+                        string uniqueString = unique.ToString();
+                        if (DrawStringField(ref key, fieldName, null, options.ToArray()))
+                        {
+                            f.SetValue(container, key);
+                            changed = true;
+                        }
+                        if (a.Vertical)
+                        {
+                            GUILayout.EndVertical();
+                        }
+                        else
+                        {
+                            GUILayout.FlexibleSpace();
+                            GUILayout.EndHorizontal();
                         }
                     }
                     else if (a.Type == DrawType.Slider)

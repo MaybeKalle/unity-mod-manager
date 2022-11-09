@@ -702,7 +702,7 @@ namespace UnityModManagerNet
                                     GUILayout.Box(!mods[i].Enabled ? Textures.StatusInactive : Textures.StatusNeedRestart, status);
                                 }
                                 if (mods[i].ErrorOnLoading)
-                                    GUILayout.Label("!!!");
+                                    GUILayout.Label("!");
 
                                 GUILayout.EndHorizontal();
 
@@ -754,7 +754,7 @@ namespace UnityModManagerNet
                             GUILayout.Space(15);
                             GUILayout.Box(Textures.WWW, www);
                             GUILayout.Space(3);
-                            GUILayout.Label("Home page", GUILayout.ExpandWidth(false));
+                            GUILayout.Label("Homepage", GUILayout.ExpandWidth(false));
                             GUILayout.Space(15);
                             GUILayout.Box(Textures.Updates, updates);
                             GUILayout.Space(3);
@@ -772,7 +772,7 @@ namespace UnityModManagerNet
                             GUILayout.Space(3);
                             GUILayout.Label("Need restart", GUILayout.ExpandWidth(false));
                             GUILayout.Space(10);
-                            GUILayout.Label("!!!", GUILayout.ExpandWidth(false));
+                            GUILayout.Label("!", GUILayout.ExpandWidth(false));
                             GUILayout.Space(3);
                             GUILayout.Label("Errors", GUILayout.ExpandWidth(false));
                             GUILayout.Space(10);
@@ -861,6 +861,7 @@ namespace UnityModManagerNet
                             GUILayout.Label("Height", GUILayout.ExpandWidth(false));
                             mExpectedWindowSize.y = GUILayout.HorizontalSlider(mExpectedWindowSize.y, Mathf.Min(Screen.height, 720), Screen.height, GUILayout.Width(200));
                             GUILayout.Label(" " + mExpectedWindowSize.y.ToString("f0") + " px ", GUILayout.ExpandWidth(false));
+                            GUILayout.TextField("Test", 255);
                             GUILayout.EndHorizontal();
                             if (GUILayout.Button("Apply", button, GUILayout.ExpandWidth(false)))
                             {

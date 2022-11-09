@@ -861,7 +861,6 @@ namespace UnityModManagerNet
                             GUILayout.Label("Height", GUILayout.ExpandWidth(false));
                             mExpectedWindowSize.y = GUILayout.HorizontalSlider(mExpectedWindowSize.y, Mathf.Min(Screen.height, 720), Screen.height, GUILayout.Width(200));
                             GUILayout.Label(" " + mExpectedWindowSize.y.ToString("f0") + " px ", GUILayout.ExpandWidth(false));
-                            GUILayout.TextField("Test", 255);
                             GUILayout.EndHorizontal();
                             if (GUILayout.Button("Apply", button, GUILayout.ExpandWidth(false)))
                             {

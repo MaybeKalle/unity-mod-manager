@@ -2,9 +2,9 @@
   "Releases":
   [
     {
-      "DownloadUrl": "https://github.com/MaybeKalle/unity-mod-manager/releases/download/v0.30.0.0-beta.1/UnityModManager.0.30.zip",
+      "DownloadUrl": "https://github.com/MaybeKalle/unity-mod-manager/releases/download/v0.30-beta.1/UnityModManager.0.30.1.zip",
       "Id": "UnityModManager",
-      "Version": "0.30.0"
+      "Version": "0.30.1"
     }
   ]
 }

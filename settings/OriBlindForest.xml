@@ -7,6 +7,5 @@
 	  <GameExe>oriDE.exe</GameExe>
 	  <EntryPoint>[Assembly-CSharp.dll]GameController.Awake:After</EntryPoint>
 	  <StartingPoint>[Assembly-CSharp.dll]GameController.Awake:After</StartingPoint>
-		<MinimalManagerVersion>0.30.0</MinimalManagerVersion>
 	</GameInfo>
 </Config>
